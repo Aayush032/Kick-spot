@@ -8,26 +8,55 @@
             <p class="login-para">Create Your Account</p>
         </div>
         <form [formGroup]="userForm" class="signup-form">
-            <label for="username" class="lato-bold">Username</label>
-            <div class="signup-field">
-                <i class="fa-solid fa-user"></i>
-                <input type="text" class="lato-regular" id="username" formControlName="username">
-            </div>
-            <label for="email" class="lato-bold">Email</label>
+            <label for="username" class="lato-bold">Username*</label>
+                <div class="signup-field">
+                    <i class="fa-solid fa-user"></i>
+                    <input type="text" class="lato-regular" id="username" formControlName="username">
+                </div>
+            @if (userForm.controls['username'].touched && userForm.controls['username'].invalid) {
+                @if(userForm.controls['username'].hasError('required')){
+                    <div class="error-msg">Username field is required!</div>
+                }
+                @if(userForm.controls['username'].hasError('maxLength')){
+                    <div class="error-msg">Title should not exceed 20 characters!</div>
+                }
+            }
+            <label for="email" class="lato-bold">Email*</label>
             <div class="signup-field">
                 <i class="fa-solid fa-envelope"></i>
                 <input type="text" class="lato-regular" id="email" formControlName="email">
             </div>
-            <label for="password" class="lato-bold">Password</label>
+            @if (userForm.controls['email'].touched && userForm.controls['email'].invalid) {
+                @if(userForm.controls['email'].hasError('required')){
+                    <div class="error-msg">Email field is required!</div>
+                }
+                @if(userForm.controls['email'].hasError('email')){
+                    <div class="error-msg">Invalid email!</div>
+                }
+            }
+            <label for="password" class="lato-bold">Password*</label>
             <div class="signup-field">
                 <i class="fa-solid fa-lock"></i>
                 <input type="text" class="lato-regular" id="password" formControlName="password">
             </div>
+            @if (userForm.controls['password'].touched && userForm.controls['password'].invalid) {
+                @if(userForm.controls['password'].hasError('required')){
+                    <div class="error-msg">Password field is required!</div>
+                }
+            }
             <label for="phone" class="lato-bold">Phone</label>
             <div class="signup-field">
                 <i class="fa-solid fa-phone"></i>
                 <input type="number" class="lato-regular" id="phone" formControlName="phone">
             </div>
+            @if (userForm.controls['phone'].touched && userForm.controls['phone'].invalid) {
+                @if(userForm.controls['phone'].hasError('required')){
+                    <div class="error-msg">Phone number field is required!</div>
+                }
+                @if(userForm.controls['phone'].hasError('maxLength')){
+                    <div class="error-msg">Phone number should not exceed 10 characters!</div>
+                }
+            }
             <div class="btn-section">
                 <button type="submit" class="login-btn" [appButton]="buttonText" (click)="onCreateClick()"></button>
             </div>

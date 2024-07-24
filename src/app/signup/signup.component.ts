@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { Router } from '@angular/router';
 import { ButtonDirective } from '../button.directive';
-import { FormGroup, FormControl, ReactiveFormsModule, FormsModule} from '@angular/forms';
+import { FormGroup, FormControl, ReactiveFormsModule, FormsModule, Validators} from '@angular/forms';
 import { UserService } from '../user.service';
 import { User } from '../user';
 @Component({
@@ -19,10 +19,10 @@ export class SignupComponent {
   constructor(private router:Router){}
   userForm = new FormGroup({
     id:new FormControl(0),
-    username:new FormControl(''),
-    email:new FormControl(''),
-    password:new FormControl(''),
-    phone:new FormControl(''),
+    username:new FormControl('',Validators.compose([Validators.required, Validators.maxLength(20)])),
+    email:new FormControl('',Validators.compose([Validators.required,Validators.email])),
+    password:new FormControl('',Validators.required),
+    phone:new FormControl('', Validators.compose([Validators.required,Validators.maxLength(10)])),
     role:new FormControl('USER')
   })
   onCrossClick(){
@@ -33,10 +33,13 @@ export class SignupComponent {
   }
   createUser(userForm:FormGroup){
     this.user = userForm.value;
-    this.userService.saveTodo(this.user).subscribe(data=>{
-      console.log(data);
-    });
-    this.router.navigate(['/login'])
+    if(userForm.valid){
+      this.userService.saveTodo(this.user).subscribe(data=>{
+        console.log(data);
+      });
+      this.router.navigate(['/login'])
+    }
+
   }
 
 }
