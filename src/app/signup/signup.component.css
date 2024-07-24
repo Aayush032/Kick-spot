@@ -3,7 +3,13 @@
     font-weight: 400;
     font-style: normal;
   }
-.login-section{
+  .lato-bold {
+    font-family: "Lato", sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    font-style: normal;
+  }
+  .signup-section{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -12,13 +18,11 @@
     margin: 10px;
     text-align: center;
     font-size: 30px;
-
 }
-
-.login{
+.signup{
     background-color: white;
     border-radius: 15px;
-    height: 300px;
+    height: 500px;
     width: 400px;
     display: flex;
     flex-direction: column;
@@ -26,9 +30,8 @@
     padding: 20px;
     margin-top: 40px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 6px 20px rgba(0, 0, 0, 0.19);
-
 }
-.login-header{
+.signup-header{
     display: flex;
     width: 100%;
     align-items: center;
@@ -49,15 +52,19 @@
     margin: 0px;
 }
 /* Form section */
-.login-form{
+label{
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.signup-form{
     margin-top: 20px;
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: start;
     
 }
-.login-field{
+.signup-field{
     /* background-color: pink; */
     width: 100%;
     height: 45px;
@@ -69,16 +76,10 @@
     border: 2px solid black;
     font-size: 20px;
 }
-.email{
+input{
     border: none;
     outline: none;
-    width: 81%;
-    font-size: 18px;
-}
-.password{
-    width: 70%;
-    border: none;
-    outline: none;
+    width: 80%;
     font-size: 18px;
 }
 .signup{
@@ -88,4 +89,15 @@
 }
 .signup p{
     margin-right: 10px;
+}
+.btn-section{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+/* To hide the spinner option */
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }

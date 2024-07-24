@@ -1,0 +1,36 @@
+<section class="signup-section">
+    <section class="header-section">
+        <a [routerLink]="['/homePage']">Kick Spot</a>
+    </section>
+    <section class="signup">
+        <div class="signup-header lato-regular">
+            <i class="fa-solid fa-xmark cross" (click)="onCrossClick()"></i>
+            <p class="login-para">Create Your Account</p>
+        </div>
+        <form [formGroup]="userForm" class="signup-form">
+            <label for="username" class="lato-bold">Username</label>
+            <div class="signup-field">
+                <i class="fa-solid fa-user"></i>
+                <input type="text" class="lato-regular" id="username" formControlName="username">
+            </div>
+            <label for="email" class="lato-bold">Email</label>
+            <div class="signup-field">
+                <i class="fa-solid fa-envelope"></i>
+                <input type="text" class="lato-regular" id="email" formControlName="email">
+            </div>
+            <label for="password" class="lato-bold">Password</label>
+            <div class="signup-field">
+                <i class="fa-solid fa-lock"></i>
+                <input type="text" class="lato-regular" id="password" formControlName="password">
+            </div>
+            <label for="phone" class="lato-bold">Phone</label>
+            <div class="signup-field">
+                <i class="fa-solid fa-phone"></i>
+                <input type="number" class="lato-regular" id="phone" formControlName="phone">
+            </div>
+            <div class="btn-section">
+                <button type="submit" class="login-btn" [appButton]="buttonText" (click)="onCreateClick()"></button>
+            </div>
+        </form>
+    </section>
+</section>
