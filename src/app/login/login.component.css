@@ -69,6 +69,15 @@
     border: 2px solid black;
     font-size: 20px;
 }
+.login-field i{
+    opacity: 0.3;
+}
+.login-btn{
+    transition: box-shadow 0.3s ease-in;
+}
+.login-btn:hover{
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 6px 20px rgba(0, 0, 0, 0.19);
+}
 .email{
     border: none;
     outline: none;

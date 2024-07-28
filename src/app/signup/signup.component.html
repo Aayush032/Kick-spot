@@ -1,65 +1,137 @@
 <section class="signup-section">
-    <section class="header-section">
-        <a [routerLink]="['/homePage']">Kick Spot</a>
-    </section>
-    <section class="signup">
-        <div class="signup-header lato-regular">
-            <i class="fa-solid fa-xmark cross" (click)="onCrossClick()"></i>
-            <p class="login-para">Create Your Account</p>
-        </div>
-        <form [formGroup]="userForm" class="signup-form">
+  <section class="header-section">
+    <a [routerLink]="['/homePage']">Kick Spot</a>
+  </section>
+  <section class="signup">
+    <div class="signup-header lato-regular">
+      <i class="fa-solid fa-xmark cross" (click)="onCrossClick()"></i>
+      <p class="login-para">Create Your Account</p>
+    </div>
+    <form [formGroup]="userForm" class="signup-form">
+        <div class="field-header">
             <label for="username" class="lato-bold">Username*</label>
-                <div class="signup-field">
-                    <i class="fa-solid fa-user"></i>
-                    <input type="text" class="lato-regular" id="username" formControlName="username">
-                </div>
-            @if (userForm.controls['username'].touched && userForm.controls['username'].invalid) {
-                @if(userForm.controls['username'].hasError('required')){
-                    <div class="error-msg">Username field is required!</div>
-                }
-                @if(userForm.controls['username'].hasError('maxLength')){
-                    <div class="error-msg">Title should not exceed 20 characters!</div>
-                }
+            @if (userForm.controls['username'].touched &&
+            userForm.controls['username'].invalid) {
+            @if(userForm.controls['username'].hasError('required')){
+            <div class="error-msg">Username field is required!</div>
+            } @if(userForm.controls['username'].hasError('maxlength')){
+            <div class="error-msg">Title should not exceed 20 characters!</div>
+            } }
+        </div>
+      <div
+        [ngClass]="{
+          'signup-field-valid':
+            userForm.controls['username'].valid,
+          'signup-field-error':
+            userForm.controls['username'].touched &&
+            userForm.controls['username'].invalid,
+          'signup-field': true
+        }"
+      >
+        <i class="fa-solid fa-user"></i>
+        <input
+          type="text"
+          class="lato-regular"
+          id="username"
+          formControlName="username"
+        />
+      </div>
+      <div class="field-header">
+        <label for="email" class="lato-bold">Email*</label>
+        @if (userForm.controls['email'].touched &&
+        userForm.controls['email'].invalid) {
+        @if(userForm.controls['email'].hasError('required')){
+        <div class="error-msg">Email field is required!</div>
+        } @if(userForm.controls['email'].hasError('email')){
+        <div class="error-msg">Invalid email!</div>
+        }
+       }
+      </div>
+      <div [ngClass]="{
+        'signup-field-valid':
+          userForm.controls['email'].valid,
+        'signup-field-error':
+          userForm.controls['email'].touched &&
+          userForm.controls['email'].invalid,
+        'signup-field': true
+      }">
+        <i class="fa-solid fa-envelope"></i>
+        <input
+          type="text"
+          class="lato-regular"
+          id="email"
+          formControlName="email"
+        />
+      </div>
+      <div class="field-header">
+        <label for="password" class="lato-bold">Password*</label>
+        @if (userForm.controls['password'].touched &&
+        userForm.controls['password'].invalid) {
+        @if(userForm.controls['password'].hasError('required')){
+        <div class="error-msg">Password field is required!</div>
+        }
+        @if (userForm.controls['password'].hasError('minlength')) {
+            <div class="error-msg">Password should exceed 6 characters</div>
+        }
+     }
+      </div>
+      <div [ngClass]="{
+        'signup-field-valid':
+          userForm.controls['password'].valid,
+        'signup-field-error':
+          userForm.controls['password'].touched &&
+          userForm.controls['password'].invalid,
+        'signup-field': true
+      }">
+        <i class="fa-solid fa-lock"></i>
+        <input
+          type="text"
+          class="lato-regular"
+          id="password"
+          formControlName="password"
+        />
+      </div>
+      <div class="field-header">
+        <label for="phone" class="lato-bold">Phone</label>
+        @if (userForm.controls['phone'].touched &&
+        userForm.controls['phone'].invalid) {
+        @if(userForm.controls['phone'].hasError('required')){
+        <div class="error-msg">Phone number field is required!</div>
+        } @if(userForm.controls['phone'].hasError('maxlength')){
+        <div class="error-msg">Enter a valid phone number!</div>
+        }
+        @else if (userForm.controls['phone'].hasError('minlength')) {
+        <div class="error-msg">Enter a valid phone number!</div>
+        }
+        @else if (userForm.controls['phone'].hasError('numeric')) {
+            <div class="error-msg">Enter a valid phone number!</div>
             }
-            <label for="email" class="lato-bold">Email*</label>
-            <div class="signup-field">
-                <i class="fa-solid fa-envelope"></i>
-                <input type="text" class="lato-regular" id="email" formControlName="email">
-            </div>
-            @if (userForm.controls['email'].touched && userForm.controls['email'].invalid) {
-                @if(userForm.controls['email'].hasError('required')){
-                    <div class="error-msg">Email field is required!</div>
-                }
-                @if(userForm.controls['email'].hasError('email')){
-                    <div class="error-msg">Invalid email!</div>
-                }
-            }
-            <label for="password" class="lato-bold">Password*</label>
-            <div class="signup-field">
-                <i class="fa-solid fa-lock"></i>
-                <input type="text" class="lato-regular" id="password" formControlName="password">
-            </div>
-            @if (userForm.controls['password'].touched && userForm.controls['password'].invalid) {
-                @if(userForm.controls['password'].hasError('required')){
-                    <div class="error-msg">Password field is required!</div>
-                }
-            }
-            <label for="phone" class="lato-bold">Phone</label>
-            <div class="signup-field">
-                <i class="fa-solid fa-phone"></i>
-                <input type="number" class="lato-regular" id="phone" formControlName="phone">
-            </div>
-            @if (userForm.controls['phone'].touched && userForm.controls['phone'].invalid) {
-                @if(userForm.controls['phone'].hasError('required')){
-                    <div class="error-msg">Phone number field is required!</div>
-                }
-                @if(userForm.controls['phone'].hasError('maxLength')){
-                    <div class="error-msg">Phone number should not exceed 10 characters!</div>
-                }
-            }
-            <div class="btn-section">
-                <button type="submit" class="login-btn" [appButton]="buttonText" (click)="onCreateClick()"></button>
-            </div>
-        </form>
-    </section>
+     }
+      </div>
+      <div [ngClass]="{
+        'signup-field-valid':
+          userForm.controls['phone'].valid,
+        'signup-field-error':
+          userForm.controls['phone'].touched &&
+          userForm.controls['phone'].invalid,
+        'signup-field': true
+      }">
+        <i class="fa-solid fa-phone"></i>
+        <input
+          type="text"
+          class="lato-regular"
+          id="phone"
+          formControlName="phone"
+        />
+      </div>
+      <div class="btn-section">
+        <button
+          type="submit"
+          class="login-btn"
+          [appButton]="buttonText"
+          (click)="onCreateClick()"
+        ></button>
+      </div>
+    </form>
+  </section>
 </section>

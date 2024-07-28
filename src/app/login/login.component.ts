@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { Router } from '@angular/router';
 import { ButtonDirective } from '../button.directive';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',

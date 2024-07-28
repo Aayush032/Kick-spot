@@ -5,4 +5,5 @@ export class User {
     password:string='';
     phone:string='';
     role:string='USER';
+    enabled:boolean=false;
 }
