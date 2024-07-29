@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
+import { GroundComponent } from "../ground/ground.component";
 
 @Component({
   selector: 'app-landing',
   standalone: true,
-  imports: [],
+  imports: [GroundComponent],
   templateUrl: './landing.component.html',
   styleUrl: './landing.component.css'
 })

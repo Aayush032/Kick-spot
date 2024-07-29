@@ -1,3 +1,9 @@
+.lato-bold {
+    font-family: "Lato", sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    font-style: normal;
+  }
 .web-header{
     text-align: center;
     background-color: #51AD19;
@@ -46,6 +52,10 @@
 .nav-item{
     list-style-type: none;
 }
+.nav-item:hover{
+    border-bottom: 3px solid #51AD19;
+    cursor: pointer;
+}
 .login{
     display: flex;
     justify-content: space-evenly;
@@ -54,9 +64,74 @@
     width: 140px;
     padding: 5px 0px 5px 0px;
 }
+.login li:hover{
+    border: 0px;
+}
+.loggedIn{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    /* background-color: lightblue; */
+    width: 140px;
+    padding: 5px 0px 5px 0px;
+}
+.loggedIn:hover{
+    border: 1px solid black;
+    background-color: #51AD19;
+    cursor: pointer;
+}
 .login:hover{
     border: 1px solid black;
     border-radius: 20px;
     background-color: #51AD19;
     cursor: pointer;
 }
+.loggedIn li:hover{
+    border: 0px;
+}
+/* Basic styles for the dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Style for the dropdown button */
+  .dropbtn {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Container for dropdown links */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 140px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    font-size: 15px;
+  }
+  
+  /* Style for each dropdown link */
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {
+    background-color: #51AD19;
+  }
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  

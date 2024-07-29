@@ -7,21 +7,42 @@
             <i class="fa-solid fa-xmark cross" (click)="onCrossClick()"></i>
             <p class="login-para">Your Account</p>
         </div>
-            <form class="login-form">
+            <form class="login-form" [formGroup]="loginForm">
                 <div class="login-field">
                     <i class="fa-solid fa-envelope"></i>
-                    <input type="text" placeholder="Enter your email" class="lato-regular email">
+                    <input type="text" placeholder="Enter your email" class="lato-regular email" formControlName="email">
                 </div>
-                <div class="login-field">
+                @if (loginForm.controls['email'].touched &&
+                loginForm.controls['email'].invalid) {
+                @if(loginForm.controls['email'].hasError('required')){
+                <div class="error-msg">Email field is required!</div>
+                } @else if(loginForm.controls['email'].hasError('email')){
+                <div class="error-msg">Invalid email!</div>
+                }@else if (loginForm.controls['email'].hasError('invalid_email')) {
+                  <div class="error-msg">Invalid email!</div>
+                }
+            }
+                <div  class="login-field">
                     <i class="fa-solid fa-lock"></i>
-                    <input [type]="password" placeholder="Enter your password" class="lato-regular password">
+                    <input [type]="password" placeholder="Enter your password" class="lato-regular password" formControlName="password">
                     @if(isPassword==true){
                         <i class="fa-regular fa-eye-slash" (click)="onShowPassword()"></i>
                     }@else {
                         <i class="fa-regular fa-eye" (click)="onShowPassword()"></i>
                     }
                 </div>
-                <button type="submit" class="login-btn" [appButton]="buttonText"></button>
+                @if (loginForm.controls['password'].touched &&
+                loginForm.controls['password'].invalid) {
+                @if(loginForm.controls['password'].hasError('required')){
+                <div class="error-msg">Password field is required!</div>
+                }
+             }
+             @if (loginForm.errors?.['invalidCredentials']) {
+              <div class="error-msg">
+                Invalid email or password.
+               </div>
+             }
+                <button type="submit" class="login-btn" [appButton]="buttonText" (click)="onLogin()"></button>
             </form>
             <div class="signup">
                 <p>Don't have an account?</p>

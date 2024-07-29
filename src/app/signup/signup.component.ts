@@ -30,6 +30,8 @@ import { ToastrService } from 'ngx-toastr';
   styleUrl: './signup.component.css',
 })
 export class SignupComponent {
+  isPassword:boolean=true;
+  password:string="password";
   buttonText: string = 'Create';
   userService: UserService = inject(UserService);
   user: User = new User();
@@ -42,7 +44,7 @@ export class SignupComponent {
     ),
     email: new FormControl(
       '',
-      Validators.compose([Validators.required, Validators.email])
+      Validators.compose([Validators.required, Validators.email,this.emailValidator])
     ),
     password: new FormControl(
       '',
@@ -59,6 +61,16 @@ export class SignupComponent {
     ),
     role: new FormControl('USER'),
   });
+  onShowPassword(){
+    this.isPassword = !this.isPassword;
+    if(this.isPassword){
+      this.password = "password";
+    }else{
+      this.password="text";
+    }
+    console.log(this.isPassword)
+    console.log(this.password);
+  }
   onCrossClick() {
     this.router.navigate(['/homePage']);
   }
@@ -71,7 +83,7 @@ export class SignupComponent {
       this.toast.error('Please enter valid credentials', 'Invalid');
     }
     if (userForm.valid) {
-      this.userService.saveTodo(this.user).subscribe((data) => {
+      this.userService.registerUser(this.user).subscribe((data) => {
         console.log(data);
         this.toast.success('Account registered successfully', 'Welcome');
       });
@@ -83,6 +95,10 @@ export class SignupComponent {
   }
   numericValidator(control: AbstractControl): ValidationErrors | null {
     const valid = /^[0-9]*$/.test(control.value);
+    return valid ? null : { numeric: true };
+  }
+  emailValidator(control: AbstractControl): ValidationErrors | null {
+    const valid = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(control.value);
     return valid ? null : { numeric: true };
   }
 }

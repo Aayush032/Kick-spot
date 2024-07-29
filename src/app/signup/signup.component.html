@@ -85,11 +85,16 @@
       }">
         <i class="fa-solid fa-lock"></i>
         <input
-          type="text"
+          [type]="password"
           class="lato-regular"
           id="password"
           formControlName="password"
         />
+        @if(isPassword==true){
+          <i class="fa-regular fa-eye-slash" (click)="onShowPassword()"></i>
+      }@else {
+          <i class="fa-regular fa-eye" (click)="onShowPassword()"></i>
+      }
       </div>
       <div class="field-header">
         <label for="phone" class="lato-bold">Phone</label>

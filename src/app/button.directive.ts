@@ -1,4 +1,4 @@
-import { Directive, ElementRef, Input, OnInit } from '@angular/core';
+import { Directive, ElementRef, HostListener, Input, OnInit, Renderer2 } from '@angular/core';
 
 @Directive({
   selector: '[appButton]',
@@ -7,7 +7,7 @@ import { Directive, ElementRef, Input, OnInit } from '@angular/core';
 export class ButtonDirective implements OnInit{
   @Input() appButton!:string;
 
-  constructor(private el: ElementRef) {
+  constructor(private el: ElementRef, private renderer:Renderer2) {
   }
   ngOnInit(): void {
     this.el.nativeElement.style.backgroundColor = '#51AD19';
@@ -18,7 +18,18 @@ export class ButtonDirective implements OnInit{
     this.el.nativeElement.style.border = 'none';
     this.el.nativeElement.style.fontSize = '22px';
     this.el.nativeElement.style.color = 'white';
-    this.el.nativeElement.style.marginTop = "20px"
+    this.el.nativeElement.style.marginTop = "10px";
+  }
+  @HostListener('mouseenter') onMouseEnter() {
+    this.setBoxShadow('0 4px 8px rgba(0, 0, 0, 0.3), 0 6px 20px rgba(0, 0, 0, 0.19)');
+  }
+
+  @HostListener('mouseleave') onMouseLeave() {
+    this.setBoxShadow(null);
+  }
+
+  private setBoxShadow(value: string | null) {
+    this.renderer.setStyle(this.el.nativeElement, 'boxShadow', value);
   }
 
 }

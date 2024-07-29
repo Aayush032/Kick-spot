@@ -14,11 +14,25 @@
                 <div class="nav-items">
                     <li class="nav-item">Home</li>
                     <li class="nav-item">About Us</li>
-                    <li class="nav-item">Categories</li>
-                    <div class="login" (click)="onLoginClick()">
-                        <i class="fa-regular fa-circle-user"></i>
-                        <li class="nav-item">Login</li>
-                    </div>
+                    <li class="nav-item">Tournaments</li>
+                    @if(isLoggedIn) {
+                        <div class="dropdown">
+                            <div class="loggedIn">
+                            <i class="fa-solid fa-circle-user"></i>
+                            <li class="nav-item">{{username}}</li>
+                            </div>
+                             <div class="dropdown-content lato-bold">
+                              <a href="#">My Account</a>
+                              <a href="#" (click)="onLogOut()">Log Out</a>
+                            </div>
+                        </div>
+                    }@else {
+                        <div class="login" (click)="onLoginClick()">
+                            <i class="fa-regular fa-circle-user"></i>
+                            <li class="nav-item">Login</li>
+                        </div>
+                    }
+                      
                 </div>
             </ul>
         </div>

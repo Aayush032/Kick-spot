@@ -11,6 +11,7 @@
   },
   "private": true,
   "dependencies": {
+    "@angular-cool/storage": "^13.0.0",
     "@angular/animations": "^18.1.0",
     "@angular/common": "^18.1.0",
     "@angular/compiler": "^18.1.0",
