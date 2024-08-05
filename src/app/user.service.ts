@@ -41,11 +41,10 @@ export class UserService {
   }
 
   bookFutsal(userId:number,futsalId:number){
-    let httpParams = new HttpParams()
+    const params = new HttpParams()
     .set('userId', userId.toString())
     .set('futsalId', futsalId.toString());
-    return this.http.post<any>(`${this.url}/user/addBooking`, { params: httpParams });
-
+    return this.http.post<any>(`${this.url}/addBooking`, null, { params });
   }
   
 }
