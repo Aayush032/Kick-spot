@@ -1,0 +1,61 @@
+p{
+    margin: 0px;
+    padding: 0px;
+}
+.lato-bold {
+    font-family: "Lato", sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    font-style: normal;
+  }
+  .lato-regular {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+.booking-list-section{
+    margin-top: 15px;
+}
+.section-header{
+  margin-left: 15px;
+}
+.empty-message{
+    opacity: 0.6;
+}
+/* Booking list section */
+.booking-list-div{
+  margin-top: 10px;
+  height: 80px;
+  width: 100%;
+  /* background-color: pink; */
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  transition: all 0.5s ease-in;
+}
+.booking-list-div:hover{
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 6px 20px rgba(0, 0, 0, 0.19);
+  border-radius: 12px;
+  cursor: pointer;
+
+}
+.index{
+  /* background-color: red; */
+  font-size: 20px;
+  width: 50px;
+  text-align: center;
+}
+.futsal-details{
+  /* background-color: blue; */
+  width: 100%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-evenly;
+}
+.booking-date{
+  width: 150px;
+  text-align: center;
+  /* background-color: skyblue; */
+}

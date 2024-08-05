@@ -1,0 +1,95 @@
+.lato-bold {
+    font-family: "Lato", sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    font-style: normal;
+}
+.tournament-section{
+    margin-top: 20px;
+}
+.section-header{
+    padding-left: 40px;
+    font-size: 25px;
+}
+p{
+    margin: 0px;
+}
+/* Tournament grid */
+/* Ground grid */
+.tournament-div{
+    display: grid;
+    row-gap: 15px;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 400px));
+    margin-top: 30px;
+    justify-content: space-between;
+    padding-left: 40px;
+}
+.tournament{
+    /* background-color: white; */
+    height: 280px;
+    width: 350px;
+    padding: 12px;
+    border-radius: 12px;
+    transition: transform 0.3s ease-in;
+    position: relative;
+    margin-bottom: 15px;
+}
+.tournament:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 6px 20px rgba(0, 0, 0, 0.19);
+}
+/* Tournament details */
+.tournament:hover .register{
+    background-color: #51AD19;
+}
+.tournament-image{
+    height: 150px;
+    width: 100%;
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 12px;
+}
+.tournament-title{
+    margin-top: 10px;
+}
+.icons{
+    opacity: 0.7;
+    margin-right: 10px;
+}
+.tournament-details{
+    height: 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.register{
+        height: 40%;
+        width: 25%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid black;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.4s ease-in;
+        text-decoration: none;
+        color: black;
+}
+.register a{
+    text-decoration: none;
+    color: black;
+}
+.prize-date{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.prize{
+    display: flex;
+}
+.date{
+    display: flex;
+    color: red;
+
+}

@@ -1,0 +1,40 @@
+<section class="tournament-section" id="tournament">
+    <div class="section-header lato-bold">
+        <p>Tournaments</p>
+    </div>
+    <div class="tournament-div">
+        @for (tournament of tournamentList; track tournament.id) {
+        <div class="tournament">
+          <div
+            [ngClass]="{ 'tournament-image': true }"
+            [ngStyle]="{'background-image': 'url(' + tournament.path + ')'}"
+          >
+        </div>
+          <div class="tournament-title lato-bold">
+            <p>{{tournament.title}}</p>
+          </div>
+          <div class="tournament-details">
+            <div class="prize-date">
+                <div class="prize">
+                    <i class="fa-solid fa-trophy icons"></i>
+                    <p>Rs. {{tournament.prize}}</p>
+                </div>
+                <div class="date">
+                    <i class="fa-solid fa-calendar-days icons"></i>
+                    <p> Deadline: {{tournament.registrationExpirationDate}}</p>
+                </div>
+            </div>
+                <a [routerLink]="['/tournament',tournament.id]" class="register">
+                  <div >
+                    Register
+                  </div>
+                </a>
+          </div>
+        </div>
+        }@empty {
+          <div>
+            No Tournaments Available 
+          </div>
+        }
+      </div>
+</section>

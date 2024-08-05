@@ -83,14 +83,21 @@ export class SignupComponent {
       this.toast.error('Please enter valid credentials', 'Invalid');
     }
     if (userForm.valid) {
-      this.userService.registerUser(this.user).subscribe((data) => {
-        console.log(data);
-        this.toast.success('Account registered successfully', 'Welcome');
-      });
-      // Delay navigation to allow the toast to be visible
-      setTimeout(() => {
-        this.router.navigate(['/login']);
-      }, 2000);
+      this.userService.registerUser(this.user).subscribe({
+        next:(response)=>{
+            console.log(response);
+            this.toast.info('Please check your email!', 'Account activation required');
+          // Delay navigation to allow the toast to be visible
+          setTimeout(() => {
+            this.router.navigate(['/login']);
+          }, 2000);
+        },
+        error:(error)=>{
+          this.toast.error('Bad Credentials', 'Invalid');
+          this.userForm.reset();
+            this.userForm.setErrors({ invalidCredentials: true });   
+        }
+      })
     }
   }
   numericValidator(control: AbstractControl): ValidationErrors | null {

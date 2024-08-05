@@ -77,8 +77,9 @@ export class LoginComponent {
       this.userService.loginUser(this.loginDetails).subscribe({
         next: (response: any) => {
           this.userService.getUserDetails(this.loginDetails.email).subscribe((res:any)=>{
-            this.tokenService.setToken(response.data, res.data['username']);
+            this.tokenService.setToken(response.data, res.data['username'],res.data['id']);
             this.username= res.data['username'];
+            console.log(res)
           });
           this.toast.success('Login successfully', 'Welcome');
           // Delay navigation to allow the toast to be visible

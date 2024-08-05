@@ -1,0 +1,31 @@
+<section class="activate-account-section">
+    @if (isSubmitted) {
+        @if (isOkay) {
+            <div class="activate-message message">
+                <p class="lato-bold">Activation successfull</p>
+                <p class="lato-regular" style="color: #51AD19; text-align: center;">Your account has been registered and activated successfully</p>
+                <div class="submit-btn" (click)="onLogin()">Login</div>
+            </div>
+        }
+        @else {
+            <div class="activate-error message">
+                <p class="lato-bold">Activation failed</p>
+                <p class="lato-regular" style="color: red;">{{message}}</p>
+                <div class="submit-btn" (click)="onTryAgain()">Try-again</div>
+            </div>
+        }
+    }@else {
+        <div class="activation-section">
+            <p class="lato-bold">Enter your activation code</p>
+            <code-input
+            [isCodeHidden]="false"
+            [codeLength]="6"
+            [code]="'number'"
+            (codeCompleted)="onCodeCompleted($event)"
+            ></code-input>
+            <div class="submit-btn" (click)="onSubmit()">
+                Submit
+            </div>
+        </div>
+    }
+</section>

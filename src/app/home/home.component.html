@@ -12,9 +12,9 @@
                     <a href=""><li class="logo">Kick Spot</li></a>
                 </div>
                 <div class="nav-items">
-                    <li class="nav-item">Home</li>
+                    <li class="nav-item" (click)="onHomeClick()">Home</li>
                     <li class="nav-item">About Us</li>
-                    <li class="nav-item">Tournaments</li>
+                    <li class="nav-item" (click)="goToSection('tournament')">Tournaments</li>
                     @if(isLoggedIn) {
                         <div class="dropdown">
                             <div class="loggedIn">
@@ -22,7 +22,7 @@
                             <li class="nav-item">{{username}}</li>
                             </div>
                              <div class="dropdown-content lato-bold">
-                              <a href="#">My Account</a>
+                              <a [routerLink]="['/accounts']">My Account</a>
                               <a href="#" (click)="onLogOut()">Log Out</a>
                             </div>
                         </div>
@@ -38,4 +38,5 @@
         </div>
     </section>
     <app-landing></app-landing>
+    <app-tournament></app-tournament>
 </section>

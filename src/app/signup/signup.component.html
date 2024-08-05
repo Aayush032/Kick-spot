@@ -129,6 +129,11 @@
           formControlName="phone"
         />
       </div>
+      @if (userForm.errors?.['invalidCredentials']) {
+        <div class="error-msg">
+          Email already in use.
+         </div>
+       }
       <div class="btn-section">
         <button
           type="submit"

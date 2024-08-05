@@ -41,6 +41,7 @@
     align-items: center;
     font-size: 24px;
 }
+
 .nav-items{
     /* background-color: green; */
     width: 50%;
@@ -72,7 +73,7 @@
     justify-content: space-evenly;
     align-items: center;
     /* background-color: lightblue; */
-    width: 140px;
+    width: 160px;
     padding: 5px 0px 5px 0px;
 }
 .loggedIn:hover{
@@ -110,7 +111,7 @@
     display: none;
     position: absolute;
     background-color: #f9f9f9;
-    min-width: 140px;
+    min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
     font-size: 15px;
@@ -128,6 +129,8 @@
   .dropdown-content a:hover {
     background-color: #51AD19;
   }
+
+ 
   
   /* Show the dropdown menu on hover */
   .dropdown:hover .dropdown-content {

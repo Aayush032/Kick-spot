@@ -8,3 +8,5 @@ html body{
     border: border-box;
     background-color: rgb(223, 221, 221);
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

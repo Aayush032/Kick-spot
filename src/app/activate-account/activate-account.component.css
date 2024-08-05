@@ -1,0 +1,72 @@
+.activate-account-section{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: whitesmoke;
+}
+.lato-bold {
+    font-family: "Lato", sans-serif;
+    font-weight: 600;
+    font-size: 30px;
+    font-style: normal;
+  }
+  .lato-regular {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+.activation-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 400px;
+    border-radius: 20px;
+    font-size: 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 6px 20px rgba(0, 0, 0, 0.19);
+}
+code-input{
+    --item-border: 2px solid black;
+    --item-border-bottom: 2px solid black;
+    --item-border-bottom-has-value: 2px solid #2a2a2a;
+    --item-border-focused: none;
+    --item-border-bottom-focused: 2px solid #809070;
+    --item-spacing: 10px;
+    --item-height: 3em;
+}
+.submit-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+    background-color: #51AD19;
+    height: 40px;
+    width: 100px;
+    border: 1px solid black;
+    border-radius: 12px;
+}
+.submit-btn:hover{
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 6px 20px rgba(0, 0, 0, 0.19);
+}
+.message{
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 6px 20px rgba(0, 0, 0, 0.19);
+    height: 400px;
+    width: 400px;
+    border-radius:20px ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.activate-error{
+    box-shadow: 0 4px 8px rgba(147, 17, 17, 0.3), 0 6px 20px rgba(146, 6, 6, 0.19);
+}
+.activate-message{
+    box-shadow: 0 4px 8px rgba(55, 222, 55, 0.3), 0 6px 20px rgba(55, 222, 55, 0.3);
+
+}

@@ -1,0 +1,67 @@
+p{
+    margin: 0px;
+}
+.lato-bold {
+    font-family: "Lato", sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    font-style: normal;
+  }
+.account-section{
+    height: 100%;
+    width: 100%;
+}
+.section-header{
+    /* background-color: red; */
+    height: 30px;
+    margin-top: 10px;
+    padding: 10px;
+}
+.cross{
+    transition: transform 0.2s ease-in ;
+    cursor: pointer;
+}
+.cross:hover{
+    transform: rotate(90deg);
+}
+.title{
+    display:flex;
+    font-size: 30px;
+    align-items: center;
+    padding-left: 40px;
+}
+.title i{
+    margin-right: 20px;
+}
+.manage-section{
+    height: 550px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 6px 20px rgba(0, 0, 0, 0.19);
+    margin: 50px 50px 10px 50px;
+    border-radius: 12px;
+    padding: 10px;
+}
+.account-header{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
+    /* background-color: green; */
+}
+.edit-account{
+    display: flex;
+    height: 40px;
+    width: 100px;
+    /* background-color: red; */
+    justify-content: space-evenly;
+    align-items: center;
+    border: 0.7px solid black;
+    border-radius: 25px;
+    transition: all 0.5s ease-in-out;
+}
+.edit-account:hover{
+    background-color: skyblue;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 6px 20px rgba(0, 0, 0, 0.19);
+    cursor: pointer;
+}

@@ -1,0 +1,21 @@
+<section class="booking-list-section">
+
+    <p class="section-header lato-bold">Bookings</p>
+    @for (booking of bookings; track booking.id) {
+        <div class="booking-list-div">
+            <div class="index lato-regular">
+                <p>{{$index+1}}</p>
+            </div>
+            <div class="futsal-details lato-regular">
+                <p>{{booking.venue}}</p>
+                <p>{{booking.road}}, {{booking.city}}</p>
+            </div>
+            <div class="booking-date lato-bold">
+                <p>{{booking.bookingDate}}</p>
+            </div>
+        </div>
+        <hr>
+    }@empty {
+        <p class="empty-message lato-regular">You don't have any booking till now</p>
+    }
+</section>

@@ -1,0 +1,187 @@
+p{
+    margin: 0px;
+}
+.lato-bold {
+    font-family: "Lato", sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    font-style: normal;
+  }
+  .lato-regular {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+.details-section{
+    height: 100%;
+    width: 100%;
+}
+.section-header{
+    /* background-color: red; */
+    height: 30px;
+    margin-top: 10px;
+    padding: 10px;
+}
+.cross{
+    transition: transform 0.2s ease-in ;
+    cursor: pointer;
+}
+.cross:hover{
+    transform: rotate(90deg);
+}
+.title{
+    display:flex;
+    font-size: 30px;
+    align-items: center;
+    padding-left: 40px;
+    margin-bottom: 20px;
+}
+.title i{
+    margin-right: 20px;
+}
+.tournament-details{
+    /* background-color: red; */
+    display: flex;
+    justify-content: space-evenly;
+    /* align-items: center; */
+    height: 400px;
+    margin: 50px 10px 10px 10px;
+    background-color: whitesmoke;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 6px 20px rgba(0, 0, 0, 0.19);
+    padding-right: 10px;
+}
+.tournament-image{
+    /* background-color: gold; */
+    width: 30%;
+    height: 350px;
+    border-right: 2px solid black;
+    margin-top: 25px;
+    margin-left: 10px;
+}
+.image{
+    height: 100%;
+    width: 90%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 12px;
+}
+.tournament-description{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    width: 70%;
+    margin-top: 25px;
+    margin-left: 10px;
+}
+.description{
+    margin-left: 15px;
+}
+.prize-venue{
+    margin-top: 15px;
+    /* background-color: red; */
+    width: 100%;
+    height: 120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+}
+.prize-div{
+    height: 100%;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: start;
+    /* background-color: gray; */
+    /* margin-left: 15px; */
+    font-size: 25px;
+}
+.prize{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+}
+.money{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 70%;
+}
+#prize1{
+    color: goldenrod;
+}
+#prize2{
+    color: silver;
+}
+#prize3{
+    color: brown;
+}
+.venue{
+    display: flex;
+    /* background-color: red; */
+    width: 60%;
+    font-size: 20px;
+    align-items: start;
+    margin-top: 5px;
+}
+.venue i{
+    color: #51AD19;
+}
+.location{
+    margin-left: 10px;
+}
+.date{
+    /* background-color: rebeccapurple; */
+    height: 70px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+.calendar{
+    display: flex;
+    font-size: 20px;
+}
+.calendar i{
+    margin-right: 10px;
+}
+.start{
+    /* background-color: red; */
+    width: 60%;
+}
+.start i{
+    color: #51AD19;
+}
+.end i{
+    color: red;
+}
+.end-date-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    /* background-color: green; */
+    margin-left: 18px;
+    height: 50px;
+}
+.start-date-div{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+    width: 60%;
+    height: 50px;
+    /* background-color: rebeccapurple; */
+}
+.register-div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    margin-top: 25px;
+    font-size: 20px;
+}

@@ -1,0 +1,66 @@
+<section class="details-section">
+    <div class="section-header">
+        <div class="title">
+            <i class="fa-solid fa-xmark cross" (click)="onCrossClick()"></i>
+            <p>{{tournament?.title}}</p>
+        </div>
+    </div>
+    <div class="tournament-details">
+        <div class="tournament-image">
+            <div class="image" [ngStyle]="{'background-image': 'url(' + tournament?.path + ')'}"></div>
+        </div>
+        <div class="tournament-description">
+            <div class="description lato-regular">
+               <p>{{tournament?.description}}</p>
+            </div>
+            <div class="prize-venue lato-regular">
+                <div class="prize-div">
+                    <div class="prize">
+                        <i class="fa-solid fa-trophy" id="prize1"></i>
+                        <div class="money">
+                            <p>{{tournament?.prize}}</p>
+                        </div>
+                    </div>
+                    <div class="prize">
+                        <i class="fa-solid fa-trophy" id="prize2"></i>
+                        <div class="money">
+                            <p>{{tournament?.secondPrize}}</p>
+                        </div>
+                    </div>
+                    <div class="prize">
+                        <i class="fa-solid fa-trophy" id="prize3"></i>
+                        <div class="money">
+                            <p>{{tournament?.thirdPrize}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="venue">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div class="location">
+                        <p>{{tournament?.venue}}</p>
+                        <p>{{venueLocation?.road}}, {{venueLocation?.city}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="date">
+                <div class="end-date-div">
+                    <p>Registration ends on:</p>
+                    <div class="end calendar lato-bold">
+                        <i class="fa-regular fa-calendar-days"></i>
+                        <p>{{tournament?.registrationExpirationDate}}</p>
+                    </div>
+                </div>
+                <div class="start-date-div">
+                    <p>Game starts on:</p>
+                    <div class="start calendar lato-bold">
+                        <i class="fa-regular fa-calendar-days"></i>
+                        <p>{{tournament?.startDate}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="register-div">
+        <button type="submit" class="login-btn" [appButton]="buttonText"></button>
+    </div>
+</section>

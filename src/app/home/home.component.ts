@@ -3,11 +3,13 @@ import { LandingComponent } from '../landing/landing.component';
 import { Router } from '@angular/router';
 import { UserService } from '../user.service';
 import { TokenService } from '../token.service';
+import { TournamentComponent } from "../tournament/tournament.component";
+import { RouterModule} from '@angular/router';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [LandingComponent],
+  imports: [LandingComponent, TournamentComponent,RouterModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
@@ -26,7 +28,13 @@ export class HomeComponent {
     onLoginClick(){
       this.router.navigate(['/login'])
     }
+    onHomeClick(){
+      this.router.navigate(['/homePage'])
+    }
     onLogOut(){
       this.tokenService.logOut();
+    }
+    goToSection(fragment:any){
+      this.router.navigateByUrl('#'+fragment);
     }
 }

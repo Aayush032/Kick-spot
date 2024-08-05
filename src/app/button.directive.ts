@@ -30,6 +30,7 @@ export class ButtonDirective implements OnInit{
 
   private setBoxShadow(value: string | null) {
     this.renderer.setStyle(this.el.nativeElement, 'boxShadow', value);
+    this.renderer.setStyle(this.el.nativeElement,"cursor","pointer");
   }
 
 }
