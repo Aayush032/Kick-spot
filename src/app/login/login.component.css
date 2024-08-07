@@ -42,7 +42,14 @@
 .cross:hover{
     transform: rotate(90deg);
 }
-
+.logo{
+    height: 120px;
+    width: 200px;
+    background-image: url("/assets/title.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
 .login-para{
     text-align: center;
     width: 100%;
