@@ -9,6 +9,7 @@ import { GroundDetailsComponent } from './ground-details/ground-details.componen
 import { TournamentDetailsComponent } from './tournament-details/tournament-details.component';
 import { AccountComponent } from './account/account.component';
 import { ActivateAccountComponent } from './activate-account/activate-account.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 export const routes: Routes = [
     {
@@ -51,5 +52,10 @@ export const routes: Routes = [
         path:"activate-account",
         component:ActivateAccountComponent,
         title:"Account Activation"
+    },
+    {
+        path:"about-us",
+        component:AboutUsComponent,
+        title:"About Us"
     }
 ];

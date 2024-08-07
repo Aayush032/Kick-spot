@@ -1,0 +1,235 @@
+.about-us-section{
+    height: 100%;
+    width: 100%;
+    padding-left: 40px;
+}
+.section-header{
+    height: 50px;
+    /* background-color: brown; */
+    margin-top: 10px;
+}
+p{
+    margin: 0px;
+}
+.lato-bold {
+    font-family: "Lato", sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    font-style: normal;
+  }
+  .lato-regular {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+.cross{
+    transition: transform 0.2s ease-in ;
+    cursor: pointer;
+}
+.cross:hover{
+    transform: rotate(90deg);
+}
+.title{
+    display:flex;
+    font-size: 30px;
+    align-items: center;
+}
+.title i{
+    margin-right: 20px;
+}
+/* Description - section */
+.description-section{
+    /* background-color: brown; */
+    height: 450px;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.logo-section{
+    height: 100%;
+    width: 30%;
+    /* background-color: greenyellow; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 2px double black;
+}
+.message-section{
+    height: 100%;
+    width: 60%;
+    /* background-color: yellow; */
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    font-size: 22px;
+}
+.logo{
+    height: 80%;
+    width: 80%;
+    background-image: url("/assets/logo.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.message{
+    height: 80%;
+    width: 90%;
+    /* background-color: brown; */
+}
+/* offer-section */
+.offer-section{
+    margin-top: 15px;
+    height: 450px;
+    width: 100%;
+    padding-right: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/* .offer{
+    height: 100%;
+    width: 25%;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 20px;
+    transition: all 0.3s ease-in;
+    border: 1px solid transparent;
+    border-top: 2px solid #51AD19;
+    position: relative;
+}
+.offer:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 6px 20px rgba(0, 0, 0, 0.19);
+    border-radius: 12px;
+}
+.offer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border-top: 2px solid #51AD19;
+    box-sizing: border-box;
+    animation: moveBorder 4s linear infinite;
+}
+
+@keyframes moveBorder {
+    0% {
+        top: 0;
+        left: 0;
+        right: 100%;
+        bottom: 100%;
+        border-top: 2px solid #51AD19;
+        border-right: 2px solid transparent;
+        border-bottom: 2px solid transparent;
+        border-left: 2px solid transparent;
+    }
+    25% {
+        top: 0;
+        left: 100%;
+        right: 0;
+        bottom: 100%;
+        border-top: 2px solid transparent;
+        border-right: 2px solid #51AD19;
+        border-bottom: 2px solid transparent;
+        border-left: 2px solid transparent;
+    }
+    50% {
+        top: 100%;
+        left: 100%;
+        right: 0;
+        bottom: 0;
+        border-top: 2px solid transparent;
+        border-right: 2px solid transparent;
+        border-bottom: 2px solid #51AD19;
+        border-left: 2px solid transparent;
+    }
+    75% {
+        top: 100%;
+        left: 0;
+        right: 100%;
+        bottom: 0;
+        border-top: 2px solid transparent;
+        border-right: 2px solid transparent;
+        border-bottom: 2px solid transparent;
+        border-left: 2px solid #51AD19;
+    }
+    100% {
+        top: 0;
+        left: 0;
+        right: 100%;
+        bottom: 100%;
+        border-top: 2px solid #51AD19;
+        border-right: 2px solid transparent;
+        border-bottom: 2px solid transparent;
+        border-left: 2px solid transparent;
+    }
+} */
+.offer {
+    height: 100%;
+    width: 25%;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 20px;
+    transition: all 0.3s ease-in;
+    border: 1px solid transparent;
+}
+
+.offer:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 6px 20px rgba(0, 0, 0, 0.19);
+    border-radius: 12px;
+    border: 2px solid #51AD19;
+}
+
+
+
+.offer-title{
+    font-weight: bold;
+    font-size: 22px;
+    position: relative;
+    top: 30px;
+}
+.offer-img{
+    height: 100px;
+    width: 100px;
+    background-color: rebeccapurple;
+    position: relative;
+    top: 10px;
+}
+#img-1{
+    background-image: url("/assets/futsal.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 15px;
+}
+#img-2{
+    background-image: url("/assets/tournament.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 15px;
+}
+#img-3{
+    background-image: url("/assets/team.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 15px;
+}
+.para{
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    top: 40px;
+}

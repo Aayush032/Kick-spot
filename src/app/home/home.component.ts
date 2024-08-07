@@ -37,4 +37,7 @@ export class HomeComponent {
     goToSection(fragment:any){
       this.router.navigateByUrl('#'+fragment);
     }
+    onAboutUs(){
+      this.router.navigate(['/about-us']);
+    }
 }
