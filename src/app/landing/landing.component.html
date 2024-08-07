@@ -2,8 +2,8 @@
     <div class="search-section">
         <div class="search-bar">
             <i class="fa-solid fa-location-dot icons"></i>
-            <input type="text" placeholder="Search a location" class="search">
-            <div class="search-btn">
+            <input type="text" placeholder="Search a location" class="search" #title>
+            <div class="search-btn" (click)="onSearch(title.value)">
                 <i class="fa-brands fa-searchengin icons"></i>
             </div>
         </div>
@@ -13,5 +13,5 @@
     </div>
 </section>
 <section class="ground-section">
-    <app-ground></app-ground>
+    <app-ground [slicedList]="filteredList"></app-ground>
 </section>

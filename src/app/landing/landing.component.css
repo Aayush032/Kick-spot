@@ -78,9 +78,14 @@ p{
   .search-btn{
     display: flex;
     align-items: center;
-    background-color: pink;
     height: 30px;
     margin-right: 10px;
     border-radius: 10px;
     background-color: rgb(235, 235, 235);
+    transition: all 0.3s ease-in;
+  }
+  .search-btn:hover{
+    background-color: #51AD19;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 6px 20px rgba(0, 0, 0, 0.19);
+    cursor: pointer;
   }

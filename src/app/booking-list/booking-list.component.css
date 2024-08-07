@@ -15,6 +15,7 @@ p{
   }
 .booking-list-section{
     margin-top: 15px;
+    height: 80%;
 }
 .section-header{
   margin-left: 15px;
@@ -23,6 +24,11 @@ p{
     opacity: 0.6;
 }
 /* Booking list section */
+.booking-list{
+  overflow-y: scroll;
+  height: 100%;
+  /* background-color: red; */
+}
 .booking-list-div{
   margin-top: 10px;
   height: 80px;
@@ -31,7 +37,7 @@ p{
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  transition: all 0.5s ease-in;
+  transition: all 0.3s ease-in;
 }
 .booking-list-div:hover{
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 6px 20px rgba(0, 0, 0, 0.19);
